@@ -1,0 +1,137 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+decorations = "full"
+opacity = 0.85
+blur = true
+dynamic_padding = false
+startup_mode = "Maximized"
+title = "Alacritty"
+dynamic_title = true
+
+[window.padding]
+x = 14
+y = 14
+
+[scrolling]
+history = 10000
+multiplier = 5
+
+[font]
+size = 18
+builtin_box_drawing = true
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Normal"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold Italic"
+
+[font.offset]
+x = 0
+y = 4
+
+[font.glyph_offset]
+x = 0
+y = 2
+
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+vi_mode_style = { shape = "Underline", blinking = "On" }
+unfocused_hollow = true
+thickness = 0.15
+
+[terminal]
+osc52 = "CopyPaste"
+
+[mouse]
+hide_when_typing = true
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[colors.primary]
+background = "#001111"
+foreground = "#ffff00"
+dim_foreground = "#aaaa00"
+bright_foreground = "#ffff55"
+
+[colors.cursor]
+text   = "#001111"
+cursor = "#ffff00"
+
+[colors.vi_mode_cursor]
+text   = "#001111"
+cursor = "#00ffff"
+
+[colors.search.matches]
+foreground = "#001111"
+background = "#ffff00"
+
+[colors.search.focused_match]
+foreground = "#001111"
+background = "#00ffff"
+
+[colors.footer_bar]
+background = "#001111"
+foreground = "#ffff00"
+
+[colors.selection]
+text       = "#001111"
+background = "#00ffff"
+
+[colors.normal]
+black   = "#45475a"
+red     = "#f38ba8"
+green   = "#a6e3a1"
+yellow  = "#f9e2af"
+blue    = "#00ffff"
+magenta = "#f5c2e7"
+cyan    = "#94e2d5"
+white   = "#bac2de"
+
+[colors.bright]
+black   = "#585b70"
+red     = "#f38ba8"
+green   = "#a6e3a1"
+yellow  = "#f9e2af"
+blue    = "#00ffff"
+magenta = "#f5c2e7"
+cyan    = "#94e2d5"
+white   = "#a6adc8"
+
+[colors.dim]
+black   = "#2a2a3a"
+red     = "#c4728a"
+green   = "#7ab890"
+yellow  = "#c4b47a"
+blue    = "#00aaaa"
+magenta = "#c49ab8"
+cyan    = "#6ab8a8"
+white   = "#8a92ae"
+
+[keyboard]
+bindings = [
+  { key = "V",        mods = "Control|Shift", action = "Paste"          },
+  { key = "C",        mods = "Control|Shift", action = "Copy"           },
+  { key = "Insert",   mods = "Shift",         action = "PasteSelection"  },
+  { key = "Key0",     mods = "Control",       action = "ResetFontSize"  },
+  { key = "Equals",   mods = "Control",       action = "IncreaseFontSize"},
+  { key = "Minus",    mods = "Control",       action = "DecreaseFontSize"},
+  { key = "L",        mods = "Control",       action = "ClearLogNotice" },
+  { key = "L",        mods = "Control",       chars  = "\x0c"           },
+  { key = "F",        mods = "Control|Shift", action = "SearchForward"  },
+  { key = "B",        mods = "Control|Shift", action = "SearchBackward" },
+]
