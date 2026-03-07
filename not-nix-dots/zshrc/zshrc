@@ -20,6 +20,26 @@ crun() {
     gcc "$1" && ./a.out && rm -f a.out
 }
 
+runxfs(){
+	cd /home/mathew/Projects/Database-Management-System/NITCbase/XFS_Interface
+	clear
+	./xfs-interface
+}
+
+nitcbase_diskfix() {
+    GOOD_DISK="/home/mathew/Tools/NITCbase-Disk/disk"
+    TARGET_DIR="/home/mathew/Projects/Database-Management-System/NITCbase/Disk"
+    rm -f "$TARGET_DIR"/disk "$TARGET_DIR"/disk_run_copy
+    cp "$GOOD_DISK" "$TARGET_DIR/"
+}
+
+runnitcbase() {
+	cd /home/mathew/Projects/Database-Management-System/NITCbase/mynitcbase
+	make
+	clear
+	./nitcbase
+}
+
 devtinyefi() {
     rm -rf build
     mkdir build || return
@@ -75,5 +95,6 @@ alias alaconfig="micro ~/.config/alacritty/alacritty.toml"
 alias ls='ls --color=never'
 alias xc="xclip -selection clipboard"
 alias termsound="toggle_sound"
+alias nextinit="npx create-next-app@latest --tailwind"
 
 
