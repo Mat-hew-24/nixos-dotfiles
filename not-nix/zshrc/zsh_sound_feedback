@@ -1,0 +1,33 @@
+autoload -Uz add-zsh-hook
+
+play_success() {
+    setsid -f paplay /usr/share/sounds/freedesktop/stereo/complete.oga >/dev/null 2>&1
+}
+
+play_fail() {
+    setsid -f paplay /usr/share/sounds/freedesktop/stereo/fahhhhh.mp3 >/dev/null 2>&1
+}
+
+command_ran=""
+
+preexec_sound() {
+    command_ran=1
+}
+
+precmd_sound() {
+    local exit_code=$?
+
+    if [[ -n "$command_ran" ]]; then
+        if [[ $exit_code -eq 0 ]]; then
+            play_success
+        else
+            play_fail
+        fi
+    fi
+
+    command_ran=""
+}
+
+add-zsh-hook preexec preexec_sound
+add-zsh-hook precmd precmd_sound
+
